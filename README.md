@@ -168,4 +168,4 @@ Este proyecto combina HTML, CSS y JavaScript para crear un temporizador visual y
 - lo muestra en pantalla
 - lo pausa y lo reinicia
 
-Si quieres, también puedo hacer una versión del README más corta, más técnica o más educativa para principiantes.
+
