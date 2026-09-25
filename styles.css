@@ -152,6 +152,33 @@ button:active { transform: translateY(1px); }
 .restart-button:hover { border-color: var(--cream); background: rgba(242, 238, 226, .08); }
 .button-icon { margin-right: 7px; }
 
+.pie-pagina {
+  position: fixed;
+  right: 0;
+  bottom: 16px;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+}
+
+.titulo-creador {
+  color: var(--muted);
+  font: 700 30px Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.link-github {
+  color: var(--orange-bright);
+  text-decoration: none;
+}
+
+.link-github:hover,
+.link-github:focus-visible {
+  color: var(--cream);
+  text-decoration: underline;
+}
+
+
 @media (max-width: 520px) {
   body { justify-content: center; padding: 16px; }
   .mission-layout { flex-direction: column; gap: 18px; }

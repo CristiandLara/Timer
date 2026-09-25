@@ -156,7 +156,7 @@ Esto permite mostrar el tiempo en formato de reloj.
 - [scripts.js](scripts.js): lógica del temporizador
 - [README.md](README.md): explicación general del proyecto
 
----
+
 
 ## Resultado final
 
