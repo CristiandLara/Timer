@@ -1,11 +1,59 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Timer</title>
+    <script src="scripts.js" defer></script>
+    <title>Mission Timer</title>
 </head>
 <body>
-    
+    <div class="mission-layout">
+        <main class="mission-console" aria-labelledby="page-title">
+        <header class="console-header">
+            <div class="mission-mark" aria-hidden="true">N</div>
+            <div>
+                <p class="eyebrow">NASA // MISSION CONTROL</p>
+                <h1 id="page-title">Countdown timer</h1>
+            </div>
+            <div class="live-status"><span class="status-dot"></span> SYSTEM READY</div>
+        </header>
+
+        <section class="timer-panel" aria-label="Contador de tiempo">
+            <div class="panel-label">T - <span id="timer-state">STANDBY</span></div>
+            <div class="display" aria-live="polite">
+                <span id="hours-display">00</span><b>:</b><span id="minutes-display">00</span><b>:</b><span id="seconds-display">00</span>
+            </div>
+            <div class="display-labels"><span>HOURS</span><span>MINUTES</span><span>SECONDS</span></div>
+        </section>
+
+        <section class="controls-panel" aria-label="Configurar cuenta regresiva">
+            <div class="input-group">
+                <label for="hours">Hours</label>
+                <input id="hours" type="number" min="0" max="99" value="0" inputmode="numeric">
+            </div>
+            <div class="input-group">
+                <label for="minutes">Minutes</label>
+                <input id="minutes" type="number" min="0" max="59" value="0" inputmode="numeric">
+            </div>
+            <div class="input-group">
+                <label for="seconds">Seconds</label>
+                <input id="seconds" type="number" min="0" max="59" value="0" inputmode="numeric">
+            </div>
+        </section>
+
+        <div class="action-row">
+            <button class="start-button" id="start-button" type="button"><span class="button-icon">▶</span> Start</button>
+            <button class="restart-button" id="restart-button" type="button"><span class="button-icon">↻</span> Restart</button>
+        </div>
+
+        </main>
+    </div>
+    <div class="stars"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
 </body>
 </html>

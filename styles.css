@@ -1,0 +1,167 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 32px clamp(24px, 8vw, 120px) 32px 32px;
+  background: radial-gradient(circle at 20% 50%, #172d4b 0, transparent 38%), linear-gradient(135deg, #050817, #11182b 58%, #080a13);
+  overflow: hidden;
+}
+
+.mission-layout {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 5vw, 70px);
+}
+
+.stars {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 8s infinite linear;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
+  z-index: 0;
+}
+
+.shooting-star:nth-of-type(2) {
+  top: 20%;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-of-type(3) {
+  top: 35%;
+  left: -100px;
+  animation-delay: 1s;
+}
+
+.shooting-star:nth-of-type(4) {
+  top: 50%;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+
+:root {
+	--navy: #07151d;
+	--panel: #0d222b;
+	--line: #31505a;
+	--muted: #8da3a6;
+	--cream: #f2eee2;
+	--orange: #ff8a3d;
+	--orange-bright: #ffad63;
+	--cyan: #7ed5cf;
+}
+
+* { box-sizing: border-box; }
+
+.mission-console { width: min(100%, 430px); padding: 28px; border: 1px solid var(--line); background: rgba(13, 34, 43, .96); box-shadow: 0 24px 80px rgba(0, 0, 0, .45); }
+.console-header, .console-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mission-mark { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid var(--orange); color: var(--orange); font: 700 20px Consolas, monospace; }
+.console-header > div:nth-child(2) { flex: 1; }
+.eyebrow, .panel-label, label, .display-labels, .live-status { margin: 0; color: var(--muted); font: 700 11px Consolas, monospace; letter-spacing: .12em; }
+h1 { margin: 3px 0 0; color: var(--cream); font-size: clamp(28px, 5vw, 44px); font-weight: 500; line-height: .95; letter-spacing: .02em; }
+.live-status { color: var(--cyan); white-space: nowrap; }
+.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.timer-panel { margin: 30px 0 20px; padding: 18px 12px 16px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.panel-label { color: var(--orange); }
+.display { margin-top: 10px; color: var(--cream); font: 700 clamp(34px, 7vw, 62px)/1 Consolas, monospace; letter-spacing: -.08em; }
+.display b { padding: 0 4px; color: var(--orange); font-weight: 400; }
+.display-labels { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 300px; margin: 8px auto 0; color: var(--muted); font-size: 8px; }
+.controls-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.input-group { display: grid; gap: 8px; }
+input { width: 100%; padding: 13px 12px; border: 1px solid var(--line); outline: none; color: var(--cream); background: #091a22; font: 700 20px Consolas, monospace; }
+input:focus { border-color: var(--orange); box-shadow: 0 0 0 2px rgba(255, 138, 61, .16); }
+.action-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+button { min-height: 52px; border: 1px solid transparent; cursor: pointer; font: 700 14px Consolas, monospace; letter-spacing: .06em; transition: background .2s, color .2s, transform .2s; }
+button:active { transform: translateY(1px); }
+.start-button { color: var(--navy); background: var(--orange); }
+.start-button:hover { background: var(--orange-bright); }
+.restart-button { color: var(--cream); border-color: var(--line); background: transparent; }
+.restart-button:hover { border-color: var(--cream); background: rgba(242, 238, 226, .08); }
+.button-icon { margin-right: 7px; }
+
+@media (max-width: 520px) {
+  body { justify-content: center; padding: 16px; }
+  .mission-layout { flex-direction: column; gap: 18px; }
+  .mission-console { padding: 24px 18px; }
+	.console-header { align-items: flex-start; flex-wrap: wrap; }
+	.live-status { width: 100%; margin-left: 54px; }
+  .timer-panel { margin-top: 28px; }
+  .display { font-size: clamp(34px, 14vw, 58px); }
+	.controls-panel { gap: 8px; }
+	input { padding: 11px 8px; font-size: 16px; }
+	label { font-size: 9px; }
+}
+
