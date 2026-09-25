@@ -24,6 +24,20 @@ body {
   gap: clamp(22px, 5vw, 70px);
 }
 
+.rocket-video {
+  display: none;
+  width: clamp(180px, 24vw, 340px);
+  height: min(70vh, 520px);
+  object-fit: contain;
+  opacity: .9;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.rocket-video.rocket-visible {
+  display: block;
+}
+
 .stars {
   width: 2px;
   height: 2px;
@@ -182,6 +196,7 @@ button:active { transform: translateY(1px); }
 @media (max-width: 520px) {
   body { justify-content: center; padding: 16px; }
   .mission-layout { flex-direction: column; gap: 18px; }
+  .rocket-video { width: min(78vw, 300px); height: 25vh; }
   .mission-console { padding: 24px 18px; }
 	.console-header { align-items: flex-start; flex-wrap: wrap; }
 	.live-status { width: 100%; margin-left: 54px; }

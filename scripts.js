@@ -8,6 +8,7 @@ const secondsDisplay = document.querySelector('#seconds-display');
 const startButton = document.querySelector('#start-button');
 const restartButton = document.querySelector('#restart-button');
 const timerState = document.querySelector('#timer-state');
+const rocketVideo = document.querySelector('#rocket-video');
 
 // Event listeners
 [hoursInput, minutesInput, secondsInput].forEach((input) => input.addEventListener('input', restartTimer));
@@ -65,6 +66,9 @@ function startTimer() {
 			stopTimer();
 			timerState.textContent = 'COMPLETE';
 			startButton.innerHTML = '<span class="button-icon">▶</span> Start';
+			rocketVideo.classList.add('rocket-visible');
+			rocketVideo.currentTime = 0;
+			rocketVideo.play();
 		}
 	}, 1000);
 }
@@ -75,6 +79,9 @@ function restartTimer() {
 	renderTimer();
 	timerState.textContent = 'STANDBY';
 	startButton.innerHTML = '<span class="button-icon">▶</span> Start';
+	rocketVideo.pause();
+	rocketVideo.currentTime = 0;
+	rocketVideo.classList.remove('rocket-visible');
 }
 
 // Inicializacion del timer
